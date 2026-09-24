@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзывы клиентов — Система ОП</title>
+<meta name="description" content="Реальные отзывы клиентов о Владиславе Бородине и компании «Система ОП» — 122 отзывов в скриншотах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e16;--bg2:#0f1622;--navy:#102234;--red:#e4002b;--red-soft:#ff2d4f;--white:#f4f6fa;--grey:#8a96a8;--line:rgba(255,255,255,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+/* topbar */
+.top{position:sticky;top:0;z-index:50;background:rgba(10,14,22,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo-txt{font-weight:900;font-size:22px;letter-spacing:1px;line-height:1}
+.logo-txt b{color:var(--red)}
+.logo-sub{display:block;font-size:9px;font-weight:600;color:var(--grey);letter-spacing:3px;margin-top:4px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--grey);border:1px solid var(--line);padding:10px 16px;border-radius:12px;transition:.25s;background:rgba(255,255,255,.03)}
+.back:hover{color:#fff;border-color:var(--red);background:var(--red)}
+/* hero */
+.hero{position:relative;text-align:center;padding:64px 0 34px}
+.glow{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none;z-index:0}
+.glow.a{width:460px;height:460px;background:radial-gradient(circle,#e4002b55,transparent 70%);top:-160px;left:50%;transform:translateX(-50%)}
+.hero .in{position:relative;z-index:1}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red-soft);border:1px solid var(--line);padding:8px 16px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.5px}
+.hero p{margin-top:16px;color:var(--grey);font-size:16px;font-weight:500}
+.hero p b{color:var(--white)}
+/* tabs */
+.tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:34px 0 10px}
+.tab{cursor:pointer;font-family:inherit;font-size:15px;font-weight:700;color:var(--grey);background:rgba(255,255,255,.03);border:1px solid var(--line);padding:14px 22px;border-radius:14px;transition:.25s}
+.tab .c{color:var(--red-soft);margin-left:6px}
+.tab:hover{color:#fff;border-color:rgba(255,255,255,.2)}
+.tab.on{color:#fff;background:var(--red);border-color:var(--red);box-shadow:0 12px 34px -12px #e4002b}
+.tab.on .c{color:#fff;opacity:.85}
+/* gallery masonry */
+.gal{padding:26px 0 70px}
+.grid{column-gap:16px}
+.grid{columns:4 260px}
+@media(max-width:900px){.grid{columns:3 220px}}
+@media(max-width:620px){.grid{columns:2 150px}}
+.shot{display:block;break-inside:avoid;margin:0 0 16px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);transition:.25s;cursor:zoom-in}
+.shot:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 16px 40px -16px #000}
+.shot img{display:block;width:100%;height:auto}
+.pane{display:none}
+.pane.on{display:block}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,12,.94);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.on{display:flex}
+.lb img{max-width:96vw;max-height:92vh;border-radius:12px;box-shadow:0 30px 80px -20px #000}
+.lb .x{position:absolute;top:20px;right:24px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb .x:hover{background:var(--red);border-color:var(--red)}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;user-select:none}
+.lb .nav:hover{background:var(--red);border-color:var(--red)}
+.lb .prev{left:20px}.lb .next{right:20px}
+@media(max-width:620px){.lb .nav{width:44px;height:44px;font-size:22px}}
+/* footer cta */
+.foot{border-top:1px solid var(--line);text-align:center;padding:48px 0 60px}
+.foot h2{font-size:clamp(22px,3.4vw,32px);font-weight:900;margin-bottom:20px}
+.btn{display:inline-block;font-weight:800;font-size:16px;padding:18px 34px;border-radius:16px;background:var(--red);color:#fff;transition:.25s;box-shadow:0 16px 40px -14px #e4002b}
+.btn:hover{background:var(--red-soft);transform:translateY(-3px)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="logo-txt">СИСТЕМА <b>ОП</b><span class="logo-sub">ОТЗЫВЫ КЛИЕНТОВ</span></span></a>
+    <a href="/" class="back">← На сайт усиления</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="glow a"></div>
+  <div class="wrap in">
+    <span class="tag">Реальные отзывы клиентов</span>
+    <h1>Нам доверяют и рекомендуют</h1>
+    <p><b>122 отзыва</b> о работе — скриншоты из переписок, соцсетей и мессенджеров, без правок.</p>
+    <div class="tabs">
+      <button class="tab on" data-pane="ceo">О Владиславе Бородине<span class="c">86</span></button>
+      <button class="tab" data-pane="sistema">О компании «Система ОП»<span class="c">36</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="gal">
+  <div class="wrap">
+    <div class="pane on" id="ceo"><div class="grid">
+<a class="shot" href="img/ceo/01.jpeg" data-full="img/ceo/01.jpeg"><img loading="lazy" src="img/ceo/01.jpeg" alt="Отзыв 1"></a>
+<a class="shot" href="img/ceo/02.jpeg" data-full="img/ceo/02.jpeg"><img loading="lazy" src="img/ceo/02.jpeg" alt="Отзыв 2"></a>
+<a class="shot" href="img/ceo/03.jpeg" data-full="img/ceo/03.jpeg"><img loading="lazy" src="img/ceo/03.jpeg" alt="Отзыв 3"></a>
+<a class="shot" href="img/ceo/04.jpeg" data-full="img/ceo/04.jpeg"><img loading="lazy" src="img/ceo/04.jpeg" alt="Отзыв 4"></a>
+<a class="shot" href="img/ceo/05.jpeg" data-full="img/ceo/05.jpeg"><img loading="lazy" src="img/ceo/05.jpeg" alt="Отзыв 5"></a>
+<a class="shot" href="img/ceo/06.jpg" data-full="img/ceo/06.jpg"><img loading="lazy" src="img/ceo/06.jpg" alt="Отзыв 6"></a>
+<a class="shot" href="img/ceo/07.jpg" data-full="img/ceo/07.jpg"><img loading="lazy" src="img/ceo/07.jpg" alt="Отзыв 7"></a>
+<a class="shot" href="img/ceo/08.png" data-full="img/ceo/08.png"><img loading="lazy" src="img/ceo/08.png" alt="Отзыв 8"></a>
+<a class="shot" href="img/ceo/09.jpeg" data-full="img/ceo/09.jpeg"><img loading="lazy" src="img/ceo/09.jpeg" alt="Отзыв 9"></a>
+<a class="shot" href="img/ceo/10.png" data-full="img/ceo/10.png"><img loading="lazy" src="img/ceo/10.png" alt="Отзыв 10"></a>
+<a class="shot" href="img/ceo/11.jpeg" data-full="img/ceo/11.jpeg"><img loading="lazy" src="img/ceo/11.jpeg" alt="Отзыв 11"></a>
+<a class="shot" href="img/ceo/12.jpeg" data-full="img/ceo/12.jpeg"><img loading="lazy" src="img/ceo/12.jpeg" alt="Отзыв 12"></a>
+<a class="shot" href="img/ceo/13.jpg" data-full="img/ceo/13.jpg"><img loading="lazy" src="img/ceo/13.jpg" alt="Отзыв 13"></a>
+<a class="shot" href="img/ceo/14.png" data-full="img/ceo/14.png"><img loading="lazy" src="img/ceo/14.png" alt="Отзыв 14"></a>
+<a class="shot" href="img/ceo/15.jpeg" data-full="img/ceo/15.jpeg"><img loading="lazy" src="img/ceo/15.jpeg" alt="Отзыв 15"></a>
+<a class="shot" href="img/ceo/16.png" data-full="img/ceo/16.png"><img loading="lazy" src="img/ceo/16.png" alt="Отзыв 16"></a>
+<a class="shot" href="img/ceo/17.png" data-full="img/ceo/17.png"><img loading="lazy" src="img/ceo/17.png" alt="Отзыв 17"></a>
+<a class="shot" href="img/ceo/18.jpeg" data-full="img/ceo/18.jpeg"><img loading="lazy" src="img/ceo/18.jpeg" alt="Отзыв 18"></a>
+<a class="shot" href="img/ceo/19.jpeg" data-full="img/ceo/19.jpeg"><img loading="lazy" src="img/ceo/19.jpeg" alt="Отзыв 19"></a>
+<a class="shot" href="img/ceo/20.jpeg" data-full="img/ceo/20.jpeg"><img loading="lazy" src="img/ceo/20.jpeg" alt="Отзыв 20"></a>
+<a class="shot" href="img/ceo/21.jpeg" data-full="img/ceo/21.jpeg"><img loading="lazy" src="img/ceo/21.jpeg" alt="Отзыв 21"></a>
+<a class="shot" href="img/ceo/22.png" data-full="img/ceo/22.png"><img loading="lazy" src="img/ceo/22.png" alt="Отзыв 22"></a>
+<a class="shot" href="img/ceo/23.png" data-full="img/ceo/23.png"><img loading="lazy" src="img/ceo/23.png" alt="Отзыв 23"></a>
+<a class="shot" href="img/ceo/24.png" data-full="img/ceo/24.png"><img loading="lazy" src="img/ceo/24.png" alt="Отзыв 24"></a>
+<a class="shot" href="img/ceo/25.jpeg" data-full="img/ceo/25.jpeg"><img loading="lazy" src="img/ceo/25.jpeg" alt="Отзыв 25"></a>
+<a class="shot" href="img/ceo/26.jpeg" data-full="img/ceo/26.jpeg"><img loading="lazy" src="img/ceo/26.jpeg" alt="Отзыв 26"></a>
+<a class="shot" href="img/ceo/27.jpeg" data-full="img/ceo/27.jpeg"><img loading="lazy" src="img/ceo/27.jpeg" alt="Отзыв 27"></a>
+<a class="shot" href="img/ceo/28.png" data-full="img/ceo/28.png"><img loading="lazy" src="img/ceo/28.png" alt="Отзыв 28"></a>
+<a class="shot" href="img/ceo/29.jpeg" data-full="img/ceo/29.jpeg"><img loading="lazy" src="img/ceo/29.jpeg" alt="Отзыв 29"></a>
+<a class="shot" href="img/ceo/30.jpeg" data-full="img/ceo/30.jpeg"><img loading="lazy" src="img/ceo/30.jpeg" alt="Отзыв 30"></a>
+<a class="shot" href="img/ceo/31.jpg" data-full="img/ceo/31.jpg"><img loading="lazy" src="img/ceo/31.jpg" alt="Отзыв 31"></a>
+<a class="shot" href="img/ceo/32.png" data-full="img/ceo/32.png"><img loading="lazy" src="img/ceo/32.png" alt="Отзыв 32"></a>
+<a class="shot" href="img/ceo/33.jpg" data-full="img/ceo/33.jpg"><img loading="lazy" src="img/ceo/33.jpg" alt="Отзыв 33"></a>
+<a class="shot" href="img/ceo/34.jpg" data-full="img/ceo/34.jpg"><img loading="lazy" src="img/ceo/34.jpg" alt="Отзыв 34"></a>
+<a class="shot" href="img/ceo/35.jpg" data-full="img/ceo/35.jpg"><img loading="lazy" src="img/ceo/35.jpg" alt="Отзыв 35"></a>
+<a class="shot" href="img/ceo/36.jpg" data-full="img/ceo/36.jpg"><img loading="lazy" src="img/ceo/36.jpg" alt="Отзыв 36"></a>
+<a class="shot" href="img/ceo/37.jpg" data-full="img/ceo/37.jpg"><img loading="lazy" src="img/ceo/37.jpg" alt="Отзыв 37"></a>
+<a class="shot" href="img/ceo/38.jpg" data-full="img/ceo/38.jpg"><img loading="lazy" src="img/ceo/38.jpg" alt="Отзыв 38"></a>
+<a class="shot" href="img/ceo/39.png" data-full="img/ceo/39.png"><img loading="lazy" src="img/ceo/39.png" alt="Отзыв 39"></a>
+<a class="shot" href="img/ceo/40.png" data-full="img/ceo/40.png"><img loading="lazy" src="img/ceo/40.png" alt="Отзыв 40"></a>
+<a class="shot" href="img/ceo/41.png" data-full="img/ceo/41.png"><img loading="lazy" src="img/ceo/41.png" alt="Отзыв 41"></a>
+<a class="shot" href="img/ceo/42.png" data-full="img/ceo/42.png"><img loading="lazy" src="img/ceo/42.png" alt="Отзыв 42"></a>
+<a class="shot" href="img/ceo/43.jpg" data-full="img/ceo/43.jpg"><img loading="lazy" src="img/ceo/43.jpg" alt="Отзыв 43"></a>
+<a class="shot" href="img/ceo/44.jpg" data-full="img/ceo/44.jpg"><img loading="lazy" src="img/ceo/44.jpg" alt="Отзыв 44"></a>
+<a class="shot" href="img/ceo/45.jpg" data-full="img/ceo/45.jpg"><img loading="lazy" src="img/ceo/45.jpg" alt="Отзыв 45"></a>
+<a class="shot" href="img/ceo/46.png" data-full="img/ceo/46.png"><img loading="lazy" src="img/ceo/46.png" alt="Отзыв 46"></a>
+<a class="shot" href="img/ceo/47.png" data-full="img/ceo/47.png"><img loading="lazy" src="img/ceo/47.png" alt="Отзыв 47"></a>
+<a class="shot" href="img/ceo/48.png" data-full="img/ceo/48.png"><img loading="lazy" src="img/ceo/48.png" alt="Отзыв 48"></a>
+<a class="shot" href="img/ceo/49.png" data-full="img/ceo/49.png"><img loading="lazy" src="img/ceo/49.png" alt="Отзыв 49"></a>
+<a class="shot" href="img/ceo/50.png" data-full="img/ceo/50.png"><img loading="lazy" src="img/ceo/50.png" alt="Отзыв 50"></a>
+<a class="shot" href="img/ceo/51.png" data-full="img/ceo/51.png"><img loading="lazy" src="img/ceo/51.png" alt="Отзыв 51"></a>
+<a class="shot" href="img/ceo/52.png" data-full="img/ceo/52.png"><img loading="lazy" src="img/ceo/52.png" alt="Отзыв 52"></a>
+<a class="shot" href="img/ceo/53.png" data-full="img/ceo/53.png"><img loading="lazy" src="img/ceo/53.png" alt="Отзыв 53"></a>
+<a class="shot" href="img/ceo/54.png" data-full="img/ceo/54.png"><img loading="lazy" src="img/ceo/54.png" alt="Отзыв 54"></a>
+<a class="shot" href="img/ceo/55.png" data-full="img/ceo/55.png"><img loading="lazy" src="img/ceo/55.png" alt="Отзыв 55"></a>
+<a class="shot" href="img/ceo/56.png" data-full="img/ceo/56.png"><img loading="lazy" src="img/ceo/56.png" alt="Отзыв 56"></a>
+<a class="shot" href="img/ceo/57.jpeg" data-full="img/ceo/57.jpeg"><img loading="lazy" src="img/ceo/57.jpeg" alt="Отзыв 57"></a>
+<a class="shot" href="img/ceo/58.jpeg" data-full="img/ceo/58.jpeg"><img loading="lazy" src="img/ceo/58.jpeg" alt="Отзыв 58"></a>
+<a class="shot" href="img/ceo/59.jpg" data-full="img/ceo/59.jpg"><img loading="lazy" src="img/ceo/59.jpg" alt="Отзыв 59"></a>
+<a class="shot" href="img/ceo/60.jpg" data-full="img/ceo/60.jpg"><img loading="lazy" src="img/ceo/60.jpg" alt="Отзыв 60"></a>
+<a class="shot" href="img/ceo/61.jpg" data-full="img/ceo/61.jpg"><img loading="lazy" src="img/ceo/61.jpg" alt="Отзыв 61"></a>
+<a class="shot" href="img/ceo/62.png" data-full="img/ceo/62.png"><img loading="lazy" src="img/ceo/62.png" alt="Отзыв 62"></a>
+<a class="shot" href="img/ceo/63.png" data-full="img/ceo/63.png"><img loading="lazy" src="img/ceo/63.png" alt="Отзыв 63"></a>
+<a class="shot" href="img/ceo/64.jpg" data-full="img/ceo/64.jpg"><img loading="lazy" src="img/ceo/64.jpg" alt="Отзыв 64"></a>
+<a class="shot" href="img/ceo/65.jpg" data-full="img/ceo/65.jpg"><img loading="lazy" src="img/ceo/65.jpg" alt="Отзыв 65"></a>
+<a class="shot" href="img/ceo/66.jpg" data-full="img/ceo/66.jpg"><img loading="lazy" src="img/ceo/66.jpg" alt="Отзыв 66"></a>
+<a class="shot" href="img/ceo/67.jpg" data-full="img/ceo/67.jpg"><img loading="lazy" src="img/ceo/67.jpg" alt="Отзыв 67"></a>
+<a class="shot" href="img/ceo/68.png" data-full="img/ceo/68.png"><img loading="lazy" src="img/ceo/68.png" alt="Отзыв 68"></a>
+<a class="shot" href="img/ceo/69.png" data-full="img/ceo/69.png"><img loading="lazy" src="img/ceo/69.png" alt="Отзыв 69"></a>
+<a class="shot" href="img/ceo/70.png" data-full="img/ceo/70.png"><img loading="lazy" src="img/ceo/70.png" alt="Отзыв 70"></a>
+<a class="shot" href="img/ceo/71.png" data-full="img/ceo/71.png"><img loading="lazy" src="img/ceo/71.png" alt="Отзыв 71"></a>
+<a class="shot" href="img/ceo/72.jpg" data-full="img/ceo/72.jpg"><img loading="lazy" src="img/ceo/72.jpg" alt="Отзыв 72"></a>
+<a class="shot" href="img/ceo/73.png" data-full="img/ceo/73.png"><img loading="lazy" src="img/ceo/73.png" alt="Отзыв 73"></a>
+<a class="shot" href="img/ceo/74.jpg" data-full="img/ceo/74.jpg"><img loading="lazy" src="img/ceo/74.jpg" alt="Отзыв 74"></a>
+<a class="shot" href="img/ceo/75.jpg" data-full="img/ceo/75.jpg"><img loading="lazy" src="img/ceo/75.jpg" alt="Отзыв 75"></a>
+<a class="shot" href="img/ceo/76.jpg" data-full="img/ceo/76.jpg"><img loading="lazy" src="img/ceo/76.jpg" alt="Отзыв 76"></a>
+<a class="shot" href="img/ceo/77.jpg" data-full="img/ceo/77.jpg"><img loading="lazy" src="img/ceo/77.jpg" alt="Отзыв 77"></a>
+<a class="shot" href="img/ceo/78.jpg" data-full="img/ceo/78.jpg"><img loading="lazy" src="img/ceo/78.jpg" alt="Отзыв 78"></a>
+<a class="shot" href="img/ceo/79.jpg" data-full="img/ceo/79.jpg"><img loading="lazy" src="img/ceo/79.jpg" alt="Отзыв 79"></a>
+<a class="shot" href="img/ceo/80.jpg" data-full="img/ceo/80.jpg"><img loading="lazy" src="img/ceo/80.jpg" alt="Отзыв 80"></a>
+<a class="shot" href="img/ceo/81.png" data-full="img/ceo/81.png"><img loading="lazy" src="img/ceo/81.png" alt="Отзыв 81"></a>
+<a class="shot" href="img/ceo/82.png" data-full="img/ceo/82.png"><img loading="lazy" src="img/ceo/82.png" alt="Отзыв 82"></a>
+<a class="shot" href="img/ceo/83.png" data-full="img/ceo/83.png"><img loading="lazy" src="img/ceo/83.png" alt="Отзыв 83"></a>
+<a class="shot" href="img/ceo/84.png" data-full="img/ceo/84.png"><img loading="lazy" src="img/ceo/84.png" alt="Отзыв 84"></a>
+<a class="shot" href="img/ceo/85.png" data-full="img/ceo/85.png"><img loading="lazy" src="img/ceo/85.png" alt="Отзыв 85"></a>
+<a class="shot" href="img/ceo/86.png" data-full="img/ceo/86.png"><img loading="lazy" src="img/ceo/86.png" alt="Отзыв 86"></a>
+    </div></div>
+    <div class="pane" id="sistema"><div class="grid">
+<a class="shot" href="img/sistema/01.jpg" data-full="img/sistema/01.jpg"><img loading="lazy" src="img/sistema/01.jpg" alt="Отзыв 1"></a>
+<a class="shot" href="img/sistema/02.jpeg" data-full="img/sistema/02.jpeg"><img loading="lazy" src="img/sistema/02.jpeg" alt="Отзыв 2"></a>
+<a class="shot" href="img/sistema/03.jpeg" data-full="img/sistema/03.jpeg"><img loading="lazy" src="img/sistema/03.jpeg" alt="Отзыв 3"></a>
+<a class="shot" href="img/sistema/04.jpeg" data-full="img/sistema/04.jpeg"><img loading="lazy" src="img/sistema/04.jpeg" alt="Отзыв 4"></a>
+<a class="shot" href="img/sistema/05.jpg" data-full="img/sistema/05.jpg"><img loading="lazy" src="img/sistema/05.jpg" alt="Отзыв 5"></a>
+<a class="shot" href="img/sistema/06.png" data-full="img/sistema/06.png"><img loading="lazy" src="img/sistema/06.png" alt="Отзыв 6"></a>
+<a class="shot" href="img/sistema/07.jpeg" data-full="img/sistema/07.jpeg"><img loading="lazy" src="img/sistema/07.jpeg" alt="Отзыв 7"></a>
+<a class="shot" href="img/sistema/08.jpeg" data-full="img/sistema/08.jpeg"><img loading="lazy" src="img/sistema/08.jpeg" alt="Отзыв 8"></a>
+<a class="shot" href="img/sistema/09.jpeg" data-full="img/sistema/09.jpeg"><img loading="lazy" src="img/sistema/09.jpeg" alt="Отзыв 9"></a>
+<a class="shot" href="img/sistema/10.jpeg" data-full="img/sistema/10.jpeg"><img loading="lazy" src="img/sistema/10.jpeg" alt="Отзыв 10"></a>
+<a class="shot" href="img/sistema/11.png" data-full="img/sistema/11.png"><img loading="lazy" src="img/sistema/11.png" alt="Отзыв 11"></a>
+<a class="shot" href="img/sistema/12.jpeg" data-full="img/sistema/12.jpeg"><img loading="lazy" src="img/sistema/12.jpeg" alt="Отзыв 12"></a>
+<a class="shot" href="img/sistema/13.jpeg" data-full="img/sistema/13.jpeg"><img loading="lazy" src="img/sistema/13.jpeg" alt="Отзыв 13"></a>
+<a class="shot" href="img/sistema/14.jpeg" data-full="img/sistema/14.jpeg"><img loading="lazy" src="img/sistema/14.jpeg" alt="Отзыв 14"></a>
+<a class="shot" href="img/sistema/15.png" data-full="img/sistema/15.png"><img loading="lazy" src="img/sistema/15.png" alt="Отзыв 15"></a>
+<a class="shot" href="img/sistema/16.jpeg" data-full="img/sistema/16.jpeg"><img loading="lazy" src="img/sistema/16.jpeg" alt="Отзыв 16"></a>
+<a class="shot" href="img/sistema/17.png" data-full="img/sistema/17.png"><img loading="lazy" src="img/sistema/17.png" alt="Отзыв 17"></a>
+<a class="shot" href="img/sistema/18.png" data-full="img/sistema/18.png"><img loading="lazy" src="img/sistema/18.png" alt="Отзыв 18"></a>
+<a class="shot" href="img/sistema/19.png" data-full="img/sistema/19.png"><img loading="lazy" src="img/sistema/19.png" alt="Отзыв 19"></a>
+<a class="shot" href="img/sistema/20.png" data-full="img/sistema/20.png"><img loading="lazy" src="img/sistema/20.png" alt="Отзыв 20"></a>
+<a class="shot" href="img/sistema/21.jpg" data-full="img/sistema/21.jpg"><img loading="lazy" src="img/sistema/21.jpg" alt="Отзыв 21"></a>
+<a class="shot" href="img/sistema/22.png" data-full="img/sistema/22.png"><img loading="lazy" src="img/sistema/22.png" alt="Отзыв 22"></a>
+<a class="shot" href="img/sistema/23.png" data-full="img/sistema/23.png"><img loading="lazy" src="img/sistema/23.png" alt="Отзыв 23"></a>
+<a class="shot" href="img/sistema/24.png" data-full="img/sistema/24.png"><img loading="lazy" src="img/sistema/24.png" alt="Отзыв 24"></a>
+<a class="shot" href="img/sistema/25.png" data-full="img/sistema/25.png"><img loading="lazy" src="img/sistema/25.png" alt="Отзыв 25"></a>
+<a class="shot" href="img/sistema/26.jpg" data-full="img/sistema/26.jpg"><img loading="lazy" src="img/sistema/26.jpg" alt="Отзыв 26"></a>
+<a class="shot" href="img/sistema/27.jpg" data-full="img/sistema/27.jpg"><img loading="lazy" src="img/sistema/27.jpg" alt="Отзыв 27"></a>
+<a class="shot" href="img/sistema/28.jpg" data-full="img/sistema/28.jpg"><img loading="lazy" src="img/sistema/28.jpg" alt="Отзыв 28"></a>
+<a class="shot" href="img/sistema/29.png" data-full="img/sistema/29.png"><img loading="lazy" src="img/sistema/29.png" alt="Отзыв 29"></a>
+<a class="shot" href="img/sistema/30.jpeg" data-full="img/sistema/30.jpeg"><img loading="lazy" src="img/sistema/30.jpeg" alt="Отзыв 30"></a>
+<a class="shot" href="img/sistema/31.jpeg" data-full="img/sistema/31.jpeg"><img loading="lazy" src="img/sistema/31.jpeg" alt="Отзыв 31"></a>
+<a class="shot" href="img/sistema/32.jpeg" data-full="img/sistema/32.jpeg"><img loading="lazy" src="img/sistema/32.jpeg" alt="Отзыв 32"></a>
+<a class="shot" href="img/sistema/33.jpeg" data-full="img/sistema/33.jpeg"><img loading="lazy" src="img/sistema/33.jpeg" alt="Отзыв 33"></a>
+<a class="shot" href="img/sistema/34.jpeg" data-full="img/sistema/34.jpeg"><img loading="lazy" src="img/sistema/34.jpeg" alt="Отзыв 34"></a>
+<a class="shot" href="img/sistema/35.jpeg" data-full="img/sistema/35.jpeg"><img loading="lazy" src="img/sistema/35.jpeg" alt="Отзыв 35"></a>
+<a class="shot" href="img/sistema/36.jpeg" data-full="img/sistema/36.jpeg"><img loading="lazy" src="img/sistema/36.jpeg" alt="Отзыв 36"></a>
+    </div></div>
+  </div>
+</section>
+
+<section class="foot">
+  <div class="wrap">
+    <h2>Хотите такой же результат в своём отделе продаж?</h2>
+    <a href="/#final" class="btn">Заказать аудит отдела продаж</a>
+  </div>
+</section>
+
+<div class="lb" id="lb">
+  <button class="x" id="lbx" aria-label="Закрыть">&times;</button>
+  <button class="nav prev" id="lbp" aria-label="Назад">&#8249;</button>
+  <img id="lbimg" src="" alt="Отзыв">
+  <button class="nav next" id="lbn" aria-label="Вперёд">&#8250;</button>
+</div>
+
+<script>
+// tabs
+var tabs=document.querySelectorAll('.tab'),panes=document.querySelectorAll('.pane');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});t.classList.add('on');
+  panes.forEach(function(p){p.classList.toggle('on',p.id===t.dataset.pane)});
+  window.scrollTo({top:0,behavior:'smooth'});
+});});
+// lightbox
+var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+var cur=[],idx=0;
+function openLb(list,i){cur=list;idx=i;lbimg.src=cur[idx];lb.classList.add('on');document.body.style.overflow='hidden';}
+function closeLb(){lb.classList.remove('on');document.body.style.overflow='';}
+function step(d){idx=(idx+d+cur.length)%cur.length;lbimg.src=cur[idx];}
+document.querySelectorAll('.pane').forEach(function(pane){
+  var shots=[].slice.call(pane.querySelectorAll('.shot'));
+  var urls=shots.map(function(s){return s.dataset.full});
+  shots.forEach(function(s,i){s.addEventListener('click',function(e){e.preventDefault();openLb(urls,i);});});
+});
+document.getElementById('lbx').onclick=closeLb;
+document.getElementById('lbn').onclick=function(){step(1)};
+document.getElementById('lbp').onclick=function(){step(-1)};
+lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+</script>
+</body>
+</html>
